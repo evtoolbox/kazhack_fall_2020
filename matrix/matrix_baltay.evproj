@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.3.0" version-extra="devel_x64">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.003921568627451"/>
+   <field name="y" value="0.47058823529412"/>
+   <field name="z" value="0.71764705882353"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_matrix_baltay">
+  <resource id="5f8a8deb-4b9-a93-1d9-d8b" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ground.FBX">
+   <filename value="ground.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e19-7b5-1ba-949-c99" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="gates.FBX">
+   <filename value="gates.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e28-715-4c9-87b-695" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="bear.fbx">
+   <filename value="bear.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e45-e3d-55a-c59-3d9" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="skull.FBX">
+   <filename value="skull.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e55-11b-cc8-7ec-b64" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="trunk.FBX">
+   <filename value="trunk.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e6f-22d-c2a-5b5-226" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="stump.FBX">
+   <filename value="stump.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e84-146-2a9-d7b-c4a" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="stick.FBX">
+   <filename value="stick.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a8e9a-345-551-252-a5a" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ball.FBX">
+   <filename value="ball.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8a9ced-6b5-74c-dcb-c99" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="skybox.fbx">
+   <filename value="skybox.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8ab2d7-822-185-8c6-b9b" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="scene_entry.fbx">
+   <filename value="scene_entry.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5f8ad3c9-e37-678-ccb-c1b" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="bear_roar.mp3">
+   <filename value="bear_roar.mp3"/>
+  </resource>
+  <resource id="5fdb3c7c-671-69e-683-596" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5fdb5729-6fd-178-1ed-cca" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="ball_batted.ogg">
+   <filename value="ball_batted.ogg"/>
+  </resource>
+  <resource id="5fdb5729-e94-97a-afb-72e" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="ball_hit.ogg">
+   <filename value="ball_hit.ogg"/>
+  </resource>
+  <resource id="5fdc8793-789-e43-add-4be" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="ball_missed.ogg">
+   <filename value="ball_missed.ogg"/>
+  </resource>
+  <resource id="5fdc90d8-ba9-d98-eac-98b" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="win.mp3">
+   <filename value="win.mp3"/>
+  </resource>
+  <resource id="5fdc91e0-6b9-ae2-34e-932" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="lose.wav">
+   <filename value="lose.wav"/>
+  </resource>
+  <resource id="OpenSans-Regular" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="OpenSans-Regular.ttf">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="C:\Projects\ev\ev_evi\build\MSWin32.advanced.int.x64\src\ev_studio\Release\studio_data\/fonts/OpenSans-Regular.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="5fdc91b6-4f18-5213-1588"/>
+   <item id="5fdc9171-c82c-bc6c-7ef6"/>
+   <item id="5fdc90e6-136d-6421-3121"/>
+   <item id="5fdc879d-234b-ad53-37ab"/>
+   <item id="5fdc8344-bf65-617d-963f"/>
+   <item id="5fdb5735-1a22-574f-c9de"/>
+   <item id="5fdb5735-c593-fd73-d8c2"/>
+   <item id="5fdb4e11-3c2a-d1a3-cd3d"/>
+   <item id="5fdb48fd-1f58-be33-c7e7"/>
+   <item id="Scene"/>
+   <item id="System"/>
+   <item id="5f8ad46c-2267-1d46-e8e4"/>
+   <item id="5f8ac726-da41-c9e9-1e5e"/>
+   <item id="5f8ac75d-64ce-a446-ebc2"/>
+   <item id="5f8ad43d-7991-dc12-b2e1"/>
+   <item id="Viewer"/>
+   <item id="5f8a906b-6c16-756a-aebe"/>
+  </order>
+  <reactor id="5f8a8dda-21d4-588a-5a75" name="gates" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="617.63622790368"/>
+    <field name="y" value="-78.977802474605"/>
+    <field name="z" value="2210.4517350623"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.50277520046515"/>
+    <field name="y" value="0.50277520046515"/>
+    <field name="z" value="0.50277520046515"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e19-7b5-1ba-949-c99"/>
+  </reactor>
+  <reactor id="5f8a8dda-2729-947a-1125" name="model_bear" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="-0.060585983097553"/>
+    <field name="y" value="0.84324606061276"/>
+    <field name="z" value="-0.011120192706585"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.17800999720595"/>
+    <field name="y" value="0.17800999720595"/>
+    <field name="z" value="0.17800999720595"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e28-715-4c9-87b-695"/>
+  </reactor>
+  <reactor id="5f8a8dda-5648-c2e4-b9c8" name="ground" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="-70.963440000386"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8deb-4b9-a93-1d9-d8b"/>
+  </reactor>
+  <reactor id="5f8a8e36-5576-31cc-c84b" name="skull" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="1046.3977339152"/>
+    <field name="y" value="135.51192739613"/>
+    <field name="z" value="871.52583109034"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="-18.063049398592"/>
+    <field name="y" value="-72.940706884743"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.33089666331983"/>
+    <field name="y" value="0.33089666331983"/>
+    <field name="z" value="0.33089666331983"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e45-e3d-55a-c59-3d9"/>
+  </reactor>
+  <reactor id="5f8a8e37-1348-63cd-3d71" name="stump" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="291.71122306579"/>
+    <field name="y" value="-79.078139731706"/>
+    <field name="z" value="-1455.2519228135"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="-0"/>
+    <field name="y" value="-133.433670948"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="24.284151867081"/>
+    <field name="y" value="24.284151867081"/>
+    <field name="z" value="24.284151867081"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e6f-22d-c2a-5b5-226"/>
+  </reactor>
+  <reactor id="5f8a8e37-1e6c-bbe4-1ae1" name="trunk" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="-1356.7990722129"/>
+    <field name="y" value="-85.039215307317"/>
+    <field name="z" value="-105.55138170001"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="-0"/>
+    <field name="y" value="26.850323751683"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="28.621776073766"/>
+    <field name="y" value="28.621776073766"/>
+    <field name="z" value="28.621776073766"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e55-11b-cc8-7ec-b64"/>
+  </reactor>
+  <reactor id="5f8a8e38-7114-516b-bed3" name="ball" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.000919"/>
+    <field name="y" value="0.000919"/>
+    <field name="z" value="0.000919"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e9a-345-551-252-a5a"/>
+  </reactor>
+  <reactor id="5f8a906b-6c16-756a-aebe" name="vr_camera_manipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="vr"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="5f8a936f-c63a-99b6-92b2" name="vr_controller_right" type="vr_controller" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8a9372-5962-267b-a888"/>
+    <item value="5f8a95da-e4a7-93ca-3ad3"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="enabled" value="true"/>
+   <parameter name="deviceType" value="controller_right"/>
+   <parameter name="autoShow" value="true"/>
+   <parameter name="autoHide" value="true"/>
+  </reactor>
+  <reactor id="5f8a9372-5962-267b-a888" name="intersector" type="node.intersector" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="segmentLength" value="2"/>
+   <parameter name="visualizationEnabled" value="true"/>
+   <parameter name="visualizationWidth" value="0.003"/>
+   <parameter name="visualizationColor">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8a938d-2ae5-73cd-1233" name="scale_objects" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8a8e37-1348-63cd-3d71"/>
+    <item value="5f8a8e37-1e6c-bbe4-1ae1"/>
+    <item value="5f8a8e36-5576-31cc-c84b"/>
+    <item value="5f8a8dda-21d4-588a-5a75"/>
+    <item value="5f8a8dda-5648-c2e4-b9c8"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="-0.034801959991455"/>
+    <field name="y" value="0.12241631746292"/>
+    <field name="z" value="-0.411721130284"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.001411"/>
+    <field name="y" value="0.001411"/>
+    <field name="z" value="0.001411"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8a95da-e4a7-93ca-3ad3" name="посох" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000000"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="-0.006510815656506"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.94833064790296"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.002027"/>
+    <field name="y" value="0.0082149"/>
+    <field name="z" value="0.002027"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a8e84-146-2a9-d7b-c4a"/>
+  </reactor>
+  <reactor id="5f8a9c0c-8e9e-5594-5d3e" name="model_skybox" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000000"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="-16.086702685141"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1.4424957917657"/>
+    <field name="y" value="1.4424957917657"/>
+    <field name="z" value="1.4424957917657"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8a9ced-6b5-74c-dcb-c99"/>
+  </reactor>
+  <reactor id="5f8aa1a9-5472-5398-c5e6" name="transform_bear_2" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8a8dda-2729-947a-1125"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="-2.9447319085275"/>
+    <field name="y" value="2.9892295717108"/>
+    <field name="z" value="-0.57906400150442"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="-0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="46.220343848157"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8aa391-2cd8-dd2e-1461" name="transform_bear_1" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8a8dda-2729-947a-1125"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="1.778773688016"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.5255992704669"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="3.5422902025174e-14"/>
+    <field name="y" value="-9.7966734658779e-14"/>
+    <field name="z" value="-95.530614311734"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8aa7d1-e3e3-c3c1-abee" name="quest" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="50.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Какой русский праздник связан с погружением в воду?"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="5.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="true"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="5f8aa7e2-2855-7d64-68e3" name="quest_menu" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fdc945c-c685-d4eb-e8e4"/>
+    <item value="5fdb4ae2-7cf6-398a-43a3"/>
+    <item value="5f8aa7d1-e3e3-c3c1-abee"/>
+    <item value="5f8aa92c-2b98-5e74-8d42"/>
+    <item value="5f8aa9e7-4744-baeb-61ab"/>
+    <item value="5f8aaa28-335a-44ce-eee6"/>
+   </parameter>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="1024.000000px"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="5f8aa848-4da5-369e-b4d4" name="transform_quest" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8aa7e2-2855-7d64-68e3"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.56211620013027"/>
+    <field name="y" value="1.344778431619"/>
+    <field name="z" value="0.31309838514335"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="45.206196342921"/>
+    <field name="y" value="-90"/>
+    <field name="z" value="-90"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8aa92c-2b98-5e74-8d42" name="answ_1" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.0101"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="16.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.22352941176471"/>
+    <field name="green" value="0.43529411764706"/>
+    <field name="blue" value="0.23921568627451"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%"/>
+    <field name="y" value="-50.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Крещение"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="6.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="true"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="5f8aa9e7-4744-baeb-61ab" name="answ_2" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.0101"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="18.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.22352941176471"/>
+    <field name="green" value="0.43529411764706"/>
+    <field name="blue" value="0.23921568627451"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%"/>
+    <field name="y" value="-67.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Вербное воскресенье"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="6.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="true"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="5f8aaa28-335a-44ce-eee6" name="answ_3" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.0101"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="16.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.22352941176471"/>
+    <field name="green" value="0.43529411764706"/>
+    <field name="blue" value="0.23921568627451"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%"/>
+    <field name="y" value="-86.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Пасха"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="6.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="true"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="5f8ab2b4-62c1-32d3-3d87" name="start_model" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.34069706454544"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.011076081388371"/>
+    <field name="y" value="0.011076081388371"/>
+    <field name="z" value="0.011076081388371"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="5f8ab2d7-822-185-8c6-b9b"/>
+  </reactor>
+  <reactor id="5f8ab337-38c7-244c-b783" name="transform_entry" type="node.transform" enabled="false">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8ab2b4-62c1-32d3-3d87"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.012098459943101"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.15570618300677"/>
+    <field name="y" value="0.15570618300677"/>
+    <field name="z" value="0.15570618300677"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8ab366-118e-623a-ecbe" name="transform_level" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5f8a9c0c-8e9e-5594-5d3e"/>
+    <item value="5f8aa848-4da5-369e-b4d4"/>
+    <item value="5f8aa1a9-5472-5398-c5e6"/>
+    <item value="5f8aa391-2cd8-dd2e-1461"/>
+    <item value="5f8a938d-2ae5-73cd-1233"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.00074958995413843"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.12803517994879"/>
+    <field name="y" value="0.12803517994879"/>
+    <field name="z" value="0.12803517994879"/>
+   </parameter>
+  </reactor>
+  <reactor id="5f8ac726-da41-c9e9-1e5e" name="число_ответов" type="counter" enabled="true">
+   <parameter name="initialValue" value="0"/>
+  </reactor>
+  <reactor id="5f8ac75d-64ce-a446-ebc2" name="число_жизней" type="counter" enabled="true">
+   <parameter name="initialValue" value="3"/>
+  </reactor>
+  <reactor id="5f8ad43d-7991-dc12-b2e1" name="рык_медведя" type="audio" enabled="true">
+   <parameter name="audioResource" value="5f8ad3c9-e37-678-ccb-c1b"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5f8ad46c-2267-1d46-e8e4" name="рык_таймер" type="timer" enabled="true"/>
+  <reactor id="5fd9bfb9-7ea8-99b9-ea8d" name="scale_world" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fdb4715-ceb6-d252-8fe9"/>
+    <item value="5f8ab337-38c7-244c-b783"/>
+    <item value="5f8ab366-118e-623a-ecbe"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.45889228805065"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="20"/>
+    <field name="y" value="20"/>
+    <field name="z" value="20"/>
+   </parameter>
+  </reactor>
+  <reactor id="5fdb45ee-f2e8-9752-5a8a" name="Life 1" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="300.000000px"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="1"/>
+    <field name="green" value="0.4"/>
+    <field name="blue" value="0.4156862745098"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="350.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="5fdb4648-df11-477f-7b3d" name="Life 2" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="300.000000px"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="1"/>
+    <field name="green" value="0.4"/>
+    <field name="blue" value="0.4156862745098"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="360.000000px"/>
+    <field name="y" value="350.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="5fdb4657-6dcc-d3ae-daa2" name="Life 3" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="300.000000px"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="1"/>
+    <field name="green" value="0.4"/>
+    <field name="blue" value="0.4156862745098"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="720.000000px"/>
+    <field name="y" value="350.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="5fdb4715-ceb6-d252-8fe9" name="lifes" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fdb45ee-f2e8-9752-5a8a"/>
+    <item value="5fdb4648-df11-477f-7b3d"/>
+    <item value="5fdb4657-6dcc-d3ae-daa2"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.12898757818113"/>
+    <field name="z" value="0.32730989795707"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="180"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.2"/>
+    <field name="y" value="0.2"/>
+    <field name="z" value="0.2"/>
+   </parameter>
+  </reactor>
+  <reactor id="5fdb48fd-1f58-be33-c7e7" name="bear_position" type="counter" enabled="true">
+   <parameter name="initialValue" value="1"/>
+  </reactor>
+  <reactor id="5fdb4ae2-7cf6-398a-43a3" name="game_over" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000000"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.02"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="110.000000%"/>
+    <field name="y" value="110.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.96078431372549"/>
+    <field name="green" value="0.094117647058824"/>
+    <field name="blue" value="0.11764705882353"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="GAME&#10;OVER"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="10.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="5fdb4e11-3c2a-d1a3-cd3d" name="ball_state" type="switch" enabled="true">
+   <parameter name="options">
+    <item value="мяч попал"/>
+    <item value="мяч отбит"/>
+    <item value="игра окончена"/>
+    <item value="начало игры"/>
+    <item value="мяч улетел"/>
+   </parameter>
+   <parameter name="currentOptionIndex" value="4"/>
+  </reactor>
+  <reactor id="5fdb5072-d972-4c33-8f46" name="ball_position_1" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="4.919577024386"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.10444712408351"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5fdb50a4-16c7-e448-5293" name="ball_position_2" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="-7.8966154005454"/>
+    <field name="y" value="7.8723489053897"/>
+    <field name="z" value="-0.36342320847096"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+  </reactor>
+  <reactor id="5fdb5735-1a22-574f-c9de" name="мяч_отбит" type="audio" enabled="true">
+   <parameter name="audioResource" value="5fdb5729-6fd-178-1ed-cca"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5fdb5735-c593-fd73-d8c2" name="мяч_попал" type="audio" enabled="true">
+   <parameter name="audioResource" value="5fdb5729-e94-97a-afb-72e"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5fdc8344-bf65-617d-963f" name="tb_camera_manipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="5fdc879d-234b-ad53-37ab" name="мяч_улетел" type="audio" enabled="true">
+   <parameter name="audioResource" value="5fdc8793-789-e43-add-4be"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5fdc90e6-136d-6421-3121" name="звук_победы" type="audio" enabled="true">
+   <parameter name="audioResource" value="5fdc90d8-ba9-d98-eac-98b"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5fdc9171-c82c-bc6c-7ef6" name="победа_таймер" type="timer" enabled="true"/>
+  <reactor id="5fdc91b6-4f18-5213-1588" name="звук_поражения" type="audio" enabled="true">
+   <parameter name="audioResource" value="5fdc91e0-6b9-ae2-34e-932"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="5fdc945c-c685-d4eb-e8e4" name="game_won" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000000"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.02"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="110.000000%"/>
+    <field name="y" value="110.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.17254901960784"/>
+    <field name="green" value="0.83921568627451"/>
+    <field name="blue" value="0.1921568627451"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="ПОБЕДА!"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="10.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fdb5072-d972-4c33-8f46"/>
+    <item value="5fdb50a4-16c7-e448-5293"/>
+    <item value="5f8a8e38-7114-516b-bed3"/>
+    <item value="5f8a936f-c63a-99b6-92b2"/>
+    <item value="5fd9bfb9-7ea8-99b9-ea8d"/>
+   </parameter>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="5fdc8344-bf65-617d-963f"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+  <parameters format="dir" filename="D:\Projects\studio_project\export\matrix.package" appName="matrix - Directory Package" appId="matrix" arch="" version="1.0" build="1" configurationFile="" appIconPath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//AppIcon.png" loadingImagePath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="matrix - Directory Package" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+  <parameters format="apk" filename="D:\Projects\studio_project\kazan\export\matrix_baltay_bear.apk" appName="Baltay (KazHack - Matrix)" appId="ru.EligoVision.evi33.KazHack.matrix" arch="arm64" version="1.0" build="1" configurationFile="" appIconPath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//AppIcon.png" loadingImagePath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="" supportedOrientations="2" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="Sinopia_Hip - EVI Android App" cameraDescription="" photolibraryDescription="" deviceMotionDescription="" selectedPreset="4" targetApi="28">
+   <presets>
+    <preset name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="${ANDROID_DATA_DIR}/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="${ANDROID_DATA_DIR}/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+  <parameters format="exe" filename="/Users/administrator/Desktop/MAC/Sinopia_Hip.exe" appName="Sinopia_Hip - EVI Windows App" appId="Sinopia.Hip" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/Applications/EV Studio 3.2.3 Advanced Edu.app/Contents/MacOS/../Resources/studio_data//AppIcon.png" loadingImagePath="/Applications/EV Studio 3.2.3 Advanced Edu.app/Contents/MacOS/../Resources/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="Sinopia_Hip - EVI Windows App" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+  <parameters format="app" filename="D:/Projects/studio_project/kazan/matrix.app" appName="matrix - EVI macOS App" appId="ru.CompanyName.matrix" arch="" version="1.0" build="1" configurationFile="" appIconPath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//AppIcon.png" loadingImagePath="C:/Projects/ev/ev_evi/build/MSWin32.advanced.int.x64/src/ev_studio/Release/studio_data//LaunchImage.png" category="None" copyright="Copyright 2019 CompanyName. All rights reserved." runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="matrix - EVI macOS App" cameraDescription="Augmented reality awaits!" photolibraryDescription="" deviceMotionDescription=""/>
+ </exportParameters>
+</Project>
